@@ -1,0 +1,16 @@
+#contador {
+     width: 100vw;
+     height: 100vh;
+     background-color: var(--backgroundColor);
+     animation: changeBackColor forwards 3s linear;
+}
+
+@keyframes changeBackColor {
+     from {
+          background-color: var(--backgroundColor);
+          background-image: var(--imageBackground);
+     }
+     to {
+          background-color: #715898;
+     }
+}

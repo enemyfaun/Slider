@@ -1,0 +1,16 @@
+#main {
+     width: 100vw;
+     height: 100vh;
+     background-color: #715898;
+     overflow: hidden;
+}
+
+@media (orientation: landscape) {
+}
+
+@media (orientation: portrait) {
+     #particles-js {
+          width: 100vw;
+          height: 100vh;
+     }
+}

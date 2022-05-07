@@ -5,6 +5,7 @@ let eGlobal;
 let clickingButton;
 
 window.addEventListener("load", () => {
+     //Code for Desktop
      buttonDeslizador = document.getElementById("contenedorButton");
      questionSection = document.getElementById("question");
 
@@ -41,7 +42,7 @@ window.addEventListener("load", () => {
                     eGlobal.clientX >
                     document.documentElement.scrollWidth * 0.6
                ) {
-                    alert("a");
+                    questionConfirmation();
                } else {
                     buttonDeslizador.style.left = "";
                }
@@ -49,6 +50,7 @@ window.addEventListener("load", () => {
           }
      });
 
+     //Code for Mobile
      buttonDeslizador.addEventListener("touchstart", (e) => {
           interval = setInterval(changeXMobile, 10);
 
@@ -85,15 +87,47 @@ window.addEventListener("load", () => {
                     eGlobal.touches[0].clientX >
                     document.documentElement.scrollWidth * 0.8
                ) {
-                    alert("b");
+                    questionConfirmation();
                } else {
                     buttonDeslizador.style.left = "";
                }
                clickingButton = false;
           }
      });
-});
 
-particlesJS.load("particles-js", "particlesjs-config.json", function () {
-     console.log("callback - particles.js config loaded");
+     //Code after button is in position
+
+     function questionConfirmation() {
+          let body = document.getElementsByTagName("body")[0];
+          body.removeChild(document.getElementById("question"));
+
+          const countdownHTML = `<section id="contador" class="contenedor flex"></section>`;
+
+          body.insertAdjacentHTML("afterbegin", countdownHTML);
+
+          let sectionContador = document.getElementById("contador");
+          setTimeout(() => {
+               sectionContador.classList.add("contadorNumeros");
+
+               setTimeout(() => {
+                    body.removeChild(sectionContador);
+
+                    const mainHTML = `<main id="main">
+                     <div id="particles-js"></div>
+                     </main>`;
+
+                    body.insertAdjacentHTML("afterbegin", mainHTML);
+
+                    particlesJS.load(
+                         "particles-js",
+                         "particlesjs-config.json",
+                         function () {
+                              console.log(
+                                   "callback - particles.js config loaded"
+                              );
+                         }
+                    );
+               }, 4100);
+          }, 3000);
+     }
 });

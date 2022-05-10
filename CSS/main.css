@@ -5,12 +5,156 @@
      overflow: hidden;
 }
 
+#mainContenedor {
+     overflow: hidden;
+     position: absolute;
+     background-color: rgba(255, 255, 255, 0.8);
+     border-radius: 100px;
+     animation: mainAnimation 3s;
+}
+
+#container {
+     width: 100vw;
+     height: 100vh;
+     position: absolute;
+     top: 0;
+     left: 0;
+}
+
+#imagen {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+}
+
+.option {
+     position: absolute;
+     bottom: 0;
+     font-family: var(--mainFont);
+     background-color: black;
+     color: white;
+}
+
+#si:hover {
+     transform: perspective(150px) rotateX(10deg);
+}
+#no:hover {
+     transform: perspective(150px) rotateX(10deg);
+}
+
+#si {
+     border-bottom-left-radius: 100px;
+}
+#no {
+     left: 50%;
+     border-bottom-right-radius: 100px;
+}
+
+.popup {
+     position: absolute;
+     background-color: rgba(0, 0, 0, 0.8);
+     border-radius: 100px;
+     text-align: center;
+     color: white;
+     animation: mainAnimation 3s forwards;
+     z-index: 100;
+}
+
+.popup p {
+     position: absolute;
+     top: 0;
+}
+
+.popup img {
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     border-radius: 100px;
+}
+
+.blur {
+     filter: blur(10px);
+}
+
+@keyframes mainAnimation {
+     from {
+          transform: scale(0) rotateZ(0deg);
+     }
+
+     to {
+          transform: scale(1) rotateZ(360deg);
+     }
+}
+
 @media (orientation: landscape) {
+     #mainContenedor {
+          width: 60vw;
+          height: 80vh;
+     }
+     .option {
+          font-size: 3vw;
+     }
+     #imagen {
+          height: 75%;
+     }
+     .option {
+          width: 50%;
+          height: 25%;
+     }
+     .popup {
+          width: 60vw;
+          height: 80vh;
+          font-size: 5vw;
+     }
+     .img2 {
+          width: 40%;
+          bottom: 10%;
+     }
+     .img1 {
+          width: 33%;
+          bottom: 5%;
+     }
+     .popup p {
+          width: 80%;
+          left: 50%;
+          transform: translateX(-50%);
+     }
 }
 
 @media (orientation: portrait) {
      #particles-js {
           width: 100vw;
           height: 100vh;
+     }
+     #mainContenedor {
+          width: 80vw;
+          height: 50vh;
+     }
+     #imagen {
+          height: 70%;
+          bottom: 25%;
+     }
+     .option {
+          width: 50%;
+          height: 25%;
+          font-size: 12vw;
+     }
+     .popup {
+          width: 80vw;
+          height: 50vh;
+          font-size: 10vw;
+     }
+     .img1 {
+          width: 60%;
+          bottom: 10%;
+     }
+
+     .img2 {
+          position: absolute;
+          width: 70%;
+          bottom: 10%;
+     }
+     .popup p {
+          width: 100%;
      }
 }

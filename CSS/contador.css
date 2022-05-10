@@ -38,7 +38,7 @@
           font-size: 0;
      }
      30% {
-          content: "1";
+          content: "3";
           font-size: var(--fontSizeContador);
      }
      32% {
@@ -54,11 +54,11 @@
           font-size: 0;
      }
      90% {
-          content: "3";
+          content: "1";
           font-size: var(--fontSizeContador);
      }
      100% {
-          content: "3";
+          content: "1";
           font-size: calc(var(--fontSizeContador) - 2vw);
      }
 }

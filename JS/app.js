@@ -169,12 +169,12 @@ window.addEventListener("load", () => {
                     );
 
                     const siHTML = `<div class="popup">
-          <p>¡Felicidades!, elegiste bien :) ♡</p>
+          <p>YEIIIIIIIIIIIIIIII</p>
           <img class="img1" src="Recursos/imagen2.jpg"></img>
      </div>`;
 
                     const noHTMML = `<div class="popup">
-          <p>¿Qué te pasa?</p>
+          <p>NOOOOOOOOOOOO</p>
           <img class="img2" src="Recursos/imagen3.jpg"></img>
      </div>`;
                     document
